@@ -36,6 +36,14 @@
                 {
                     $valueStr = $value.Value.Email
                 }
+                if ($value.Value.GetType().FullName -eq "Microsoft.SharePoint.Client.FieldLookupValue")
+                {
+                    $valueStr = $value.Value.LookupId
+                }
+                if ($value.Value.GetType().FullName -eq "System.DateTime")
+                {
+                    $valueStr = $value.Value.ToString("MM/dd/yyyy HH:mm:ss")
+                }
                 if ($value.Value.GetType().FullName -eq "Microsoft.SharePoint.Client.FieldCalculatedErrorValue")
                 {
                     continue
