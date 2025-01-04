@@ -42,7 +42,7 @@
                 }
                 if ($value.Value.GetType().FullName -eq "System.DateTime")
                 {
-                    $valueStr = $value.Value.ToString("MM/dd/yyyy HH:mm:ss")
+                    $valueStr = $value.Value.ToString("MM/dd/yyyy HH:mm:ss", [System.Globalization.CultureInfo]::InvariantCulture)
                 }
                 if ($value.Value.GetType().FullName -eq "Microsoft.SharePoint.Client.FieldCalculatedErrorValue")
                 {
