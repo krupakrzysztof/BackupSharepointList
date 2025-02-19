@@ -11,4 +11,7 @@ $path = "C:\sharepoint\list_$((get-Date).ToString("yyyyMMddHHmmss")).json"
 Backup-SharepointListItems -Connection $connection -ListName "My Old List" -Path $path
 
 Restore-SharepointListItems -Connection $connection -ListName "My New List" -Path $path
+
+# if you want to restore ids add optional parameter TryRestoreIds
+Restore-SharepointListItems -Connection $connection -ListName "My New List" -Path $path -TryRestoreIds
 ```
